@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+
+    <style>
+        .image-box {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .image-box img {
+            width: 100%;
+            max-width: 260px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.35);
+            transition: 0.4s;
+        }
+
+        .image-box img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.5);
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff0f3;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #yesBtn {
+            background: #ff4d6d;
+            color: white;
+        }
+
+        #noBtn {
+            background: #ccc;
+        }
+
+        #note,
+        #note2 {
+            display: none;
+            text-align: left;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- FIRST SCREEN -->
+        <div id="main-content">
+            <h1>I Love You</h1>
+            <p>Will you be mine forever?</p>
+
+            <div class="buttons">
+                <button id="yesBtn" onclick="showNote()">Yes</button>
+                <button id="noBtn" onmouseover="hideNo()">No</button>
+            </div>
+        </div>
+
+        <!-- NOTE 1 -->
+        <div id="note">
+            <h3>My Dearest,</h3>
+            <p>I knew you'd say yes! I wanted to tell you exactly why you're so special to me:</p>
+
+            <ul>
+                <li><strong>Your Kindness:</strong> The way you care for everyone.</li>
+                <li><strong>Your Smile:</strong> Lights up my darkest days.</li>
+                <li><strong>Your Strength:</strong> You handle everything beautifully.</li>
+                <li><strong>Your Wit:</strong> You get my humor.</li>
+            </ul>
+
+            <button onclick="showNote2()">Next ❤️</button>
+        </div>
+
+        <!-- NOTE 2 -->
+        <div id="note2">
+            <p>
+                I just want you to know how much you truly mean to me and how deeply I value you. I love your caring heart.. the way you feel things so intensely... 
+the way your smile lights up everything around you and babyyy being with you has been one of the most beautiful and meaningful parts of my life. I know I haven’t always expressed myself the right way, especially when I acted nonchalant or distant when you needed reassurance the most. It was never because I didn’t care, sometimes I just don’t know how to show how deeply I feel. I understand now how much that hurt you and I take responsibility for that. I’m ready to grow, to communicate better...  I’m not perfect but my feelings for you are real... 
+I Love You.
+                <br><br><strong>I Love You ❤️</strong>
+            </p>
+
+            <div class="image-box">
+                <img src="WhatsApp Image 2026-02-23 at 2.40.09 PM (1).jpeg" alt="Us">
+            </div>
+
+            <button onclick="showNote()">Prev</button>
+        </div>
+
+    </div>
+
+    <script>
+        function hideNo() {
+            document.getElementById("noBtn").style.display = "none";
+        }
+
+        function showNote() {
+            document.getElementById("main-content").style.display = "none";
+            document.getElementById("note").style.display = "block";
+            document.getElementById("note2").style.display = "none";
+        }
+
+        function showNote2() {
+            document.getElementById("note").style.display = "none";
+            document.getElementById("note2").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
